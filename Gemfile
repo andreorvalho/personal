@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.1"
+ruby "3.3.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.1"
@@ -54,6 +54,7 @@ group :development, :test do
   gem 'simplecov', require: false
   # Code linting
   gem "rubocop-rails", require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
