@@ -60,7 +60,7 @@ jobs:
           command: echo "CREATE ROLE personal_test_user WITH LOGIN CREATEDB PASSWORD 'personal_test_password';" | psql -U postgres
       - run:
           name: Database setup
-          command: bundle exec rails db:reset RAILS_ENV=test
+          command: bundle exec rails db:create db:migrate RAILS_ENV=test
       - run:
           name: Database setup
           command: bundle exec rails assets:precompile RAILS_ENV=test
