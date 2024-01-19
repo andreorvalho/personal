@@ -53,16 +53,16 @@ jobs:
       - checkout
       - ruby/install-deps
       - run:
-          name: wait for DB
+          name: Launch database
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
-          name: Database roles
+          name: Create database roles
           command: echo "CREATE ROLE personal_test_user WITH LOGIN CREATEDB PASSWORD 'personal_test_password';" | psql -U postgres
       - run:
           name: Database setup
           command: bundle exec rails db:create db:migrate RAILS_ENV=test
       - run:
-          name: Database setup
+          name: Assets precompilation
           command: bundle exec rails assets:precompile RAILS_ENV=test
       - run:
           name: rspec test
