@@ -1,8 +1,10 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-RSpec.describe "home page", type: :request do
-  it "visits home page successfully" do
-    get "/"
+require 'rails_helper'
+
+RSpec.describe 'home page' do
+  it 'visits home page successfully' do
+    get '/'
     expect(response).to render_template('home/index')
   end
 end
