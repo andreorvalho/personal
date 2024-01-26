@@ -53,6 +53,9 @@ jobs:
       - checkout
       - ruby/install-deps
       - run:
+          name: Check linting of ruby code
+          command: bundle exec rubocop .
+      - run:
           name: Launch database
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
