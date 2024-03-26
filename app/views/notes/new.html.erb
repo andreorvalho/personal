@@ -1,9 +1,13 @@
 <h1>New note</h1>
 
-<%= render "form", note: @note %>
-
+<div id="new-note"></div>
 <br>
 
 <div>
   <%= link_to "Back to notes", notes_path %>
 </div>
+
+<% content_for :head do %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "components/notes/new/entry", "data-turbo-track": "reload", defer: true %>
+<% end %>
