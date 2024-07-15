@@ -9,3 +9,5 @@
 #   end
 
 User.create(email: 'andre@orvalho.com', password: 'password')
+
+Note.create(title: 'on going', content: 'lovely information')
