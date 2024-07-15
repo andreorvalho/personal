@@ -3,5 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe Note do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'has a valid factory' do
+    let(:note) { create(:note) }
+
+    it 'returns true' do
+      expect(note.valid?).to be_truthy
+    end
+  end
 end
