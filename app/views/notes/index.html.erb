@@ -1,0 +1,8 @@
+<h1>Notes</h1>
+<%= link_to "New note", new_note_path %>
+<div id="notes"></div>
+
+<% content_for :head do %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "components/notes/index/entry", "data-turbo-track": "reload", defer: true %>
+<% end %>

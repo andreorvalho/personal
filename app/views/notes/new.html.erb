@@ -1,0 +1,15 @@
+<h1>Add a new note</h1>
+
+<div id="new-note"></div>
+<br>
+
+<div>
+  <%= link_to "Back to notes", notes_path %>
+</div>
+
+<% content_for :head do %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "components/notes/new/entry", "data-turbo-track": "reload", defer: true %>
+  <%= stylesheet_link_tag "components/notes/new/entry", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "new", "data-turbo-track": "reload" %>
+<% end %>

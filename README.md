@@ -24,8 +24,8 @@ Rails 8
 
 ### database postgres
 
-brew info postgres(version: 11.5)
-brew install postgres
+brew info postgresql
+brew install postgresql
 
 1. start postgres(https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb)
 ```
@@ -47,6 +47,9 @@ psql postgres
 ```
 CREATE ROLE personal_development_user WITH LOGIN PASSWORD 'personal_development_password';
 ALTER ROLE personal_development_user CREATEDB;
+
+CREATE ROLE personal_test_user WITH LOGIN PASSWORD 'personal_test_password';
+ALTER ROLE personal_test_user CREATEDB;
 ```
 
 5. create db and run migrations:
