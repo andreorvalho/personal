@@ -8,24 +8,17 @@ https://gist.github.com/kirillshevch/1b52f711e66b064416d746f07e834c00 - rails ne
 
 http://amalrik.github.io/2019/03/14/settingup-rails6-rspec/ - Rspec
 
-## Missing:
-
 https://blog.dennisokeeffe.com/blog/2022-02-19-rails-7-using-react-with-esbuild - react
 
-circle CI
+## Missing:
 
-## Features:
 
-1. currency
-2. exchange rates
-3. investments
+# Instalation
 
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
 
-Ruby version 3
-Rails 7
-
-# Instalation
+Ruby version 3.3.4
+Rails 8
 
 ## MacOs
 
@@ -69,4 +62,6 @@ bundle exec rails generate rspec:install
 
 ### start application
 
-./bin/dev
+./bin/setup
+
+## Features:

@@ -41,7 +41,7 @@ jobs:
   test-ruby:
     # Install gems, run rspec tests
     docker:
-      - image: cimg/ruby:3.3.0-node
+      - image: cimg/ruby:3.3.4-node
       - image: cimg/postgres:16.0
     environment:
       RAILS_ENV: test
