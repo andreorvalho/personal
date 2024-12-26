@@ -1,12 +1,13 @@
 import React from "react";
 import MDEditor from "@uiw/react-md-editor";
 
-export default function newEditor() {
-  const [textEntry, setTextEntry] = React.useState("");
-
+export default function newEditor({ value = '', onChange, handleSubmit }) {
   return (
     <div>
-      <MDEditor value={textEntry} onChange={setTextEntry} />
+      <form onSubmit={handleSubmit}>
+        <button type="submit" className="btn btn-success">Success</button>
+        <MDEditor value={value} onChange={onChange} />
+      </form>
     </div>
   );
 }

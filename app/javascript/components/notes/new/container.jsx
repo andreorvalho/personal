@@ -1,9 +1,31 @@
 import React, { useState } from 'react';
 import NewEditor from "./new_editor";
 import NewConverter from "./new_converter";
+import axios from 'axios';
 
 const Container = () => {
-  var [newNote, setNewNote] = useState(true);
+  const [newNote, setNewNote] = useState(true);
+  const [textEntry, setTextEntry] = useState("");
+
+  const handleSubmit = (e) => {
+    axios({
+      method: 'POST',
+      url: '/notes.json',
+      data: { note: { content: textEntry, title: 'new note' } },
+      headers: {
+        'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
+      }
+    })
+    .then(response => {
+      if (response?.data?.id) {
+        window.location.href = `/notes/${response?.data?.id}`
+      }
+    })
+    .catch(error => {
+      console.log(error);
+    })
+    e.preventDefault();
+  }
 
   return (
     <>
@@ -24,9 +46,13 @@ const Container = () => {
           Convert text note into markdown
         </p>
       </div>
-      {newNote ? <NewEditor /> : <NewConverter />}
+      {
+        newNote ?
+          <NewEditor value={textEntry} onChange={setTextEntry} handleSubmit={handleSubmit} /> :
+          <NewConverter value={textEntry} onChange={setTextEntry} handleSubmit={handleSubmit} />
+      }
     </>
-  )
+  );
 }
 
 export default Container;

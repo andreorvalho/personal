@@ -6,7 +6,5 @@ import Container from "./container"
 const root = ReactDOM.createRoot(document.getElementById("new-note"));
 
 root.render(
-  <React.StrictMode>
-    <Container />
-  </React.StrictMode>
+  <Container />
 );
